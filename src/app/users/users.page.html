@@ -1,0 +1,170 @@
+<ion-app>
+  <ion-content class="page">
+    <ion-toolbar class="tool">
+      <ion-grid>
+        <ion-row class="ion-align-items-center">
+          <ion-col size="2">
+            <ion-icon
+              (click)="returnHome()"
+              src="../../assets/mdicons/md-home.svg"
+            ></ion-icon>
+          </ion-col>
+          <ion-col size="6">
+            <ion-icon class="pers" name="person"> </ion-icon
+            ><ion-label> Tabari Arrafat</ion-label>
+          </ion-col>
+          <ion-col>
+            <ion-icon
+              src="../../assets/mdicons/Settings.svg"
+              auto-hide="false"
+            ></ion-icon>
+          </ion-col>
+          <ion-col>
+            <ion-icon
+              src="../../assets/mdicons/Logout.svg"
+              auto-hide="false"
+            ></ion-icon>
+          </ion-col>
+          <ion-col> </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-toolbar>
+
+    <div class="tab">
+      <ion-content class="item ion-padding">
+        <ion-segment
+          [(ngModel)]="selectedSegement"
+          (ionChange)="segmentChanged($event)"
+          value="users" >
+          <ion-segment-button>
+            <ion-fab-button>
+              <ion-icon src="../../assets/mdicons/md-prod.svg "></ion-icon>
+            </ion-fab-button>
+          </ion-segment-button>
+          <ion-segment-button value="prod" class="segment-value">
+            <ion-fab-button>
+              <ion-icon src="../../assets/mdicons/md-emp.svg"></ion-icon>
+            </ion-fab-button>
+          </ion-segment-button>
+          <ion-segment-button value="users">
+            <ion-fab-button>
+              <ion-icon src="../../assets/mdicons/md-us.svg"></ion-icon>
+            </ion-fab-button>
+          </ion-segment-button>
+          <ion-segment-button>
+            <ion-fab-button>
+              <ion-icon
+                class="menu-icon"
+                src="../../assets/mdicons/md-inv.svg"
+              ></ion-icon>
+            </ion-fab-button>
+          </ion-segment-button>
+          <ion-segment-button>
+            <ion-fab-button>
+              <ion-icon
+                class="menu-icon"
+                src="../../assets/mdicons/md-stock.svg"
+              ></ion-icon>
+            </ion-fab-button>
+          </ion-segment-button>
+        </ion-segment>
+      </ion-content>
+      <ion-content class="table users" *ngIf="selectedSegement == 'users'">
+        <ion-row *ngIf="hideMe" class="top">
+          <ion-col *ngIf="hideMe" size="3"> Nom </ion-col>
+          <ion-col *ngIf="hideMe" size="3"> Login </ion-col>
+          <ion-col *ngIf="hideMe" size="4"> Téléphone </ion-col>
+          <ion-col *ngIf="hideMe" size="2"> éditer </ion-col>
+        </ion-row>
+        <ion-row *ngIf="!hideMe" class="top">
+          <ion-col class="show" size="6"> Formulaire </ion-col>
+        </ion-row>
+        <ion-content class="scrol">
+          <ion-scroll *ngIf="hideMe" scrollY="true" direction="xy">
+
+        
+            <ion-row  *ngFor="let user of users"  [routerLink]="['/', 'users', user.id]" class="data-row">
+              <ion-col size="3"> {{user.name}}</ion-col>
+              <ion-col size="3"> {{user.username}} </ion-col>
+              <ion-col size="4"> {{user.tele}} </ion-col>
+              <ion-col class="edit" size="2">
+                <ion-icon src="../../assets/mdicons/edit.svg"></ion-icon>
+              </ion-col>
+            </ion-row>
+          </ion-scroll>
+          <ion-scroll  *ngIf="!hideMe" scrollY="true" direction="xy">
+            <ion-content>
+             
+            <ion-list class="form ion-padding">
+              
+              <ion-item class="select">
+                <ion-label>Role
+                <ion-input [(ngModel)]="usersData.role"  type="text"> </ion-input ></ion-label> 
+              </ion-item>
+
+              <ion-item>
+                <ion-label position="floating"
+                  >Nom<ion-input [(ngModel)]="usersData.name"  type="text"></ion-input
+                ></ion-label>
+              </ion-item>
+
+              <ion-item>
+                <ion-label position="floating">Prénom</ion-label>
+                <ion-input [(ngModel)]="usersData.prenom"  type="text"></ion-input>
+              </ion-item>
+              <ion-item>
+                <ion-label position="floating">Username</ion-label>
+                <ion-input [(ngModel)]="usersData.username"  type="email"></ion-input>
+              </ion-item>
+              <ion-item>
+                <ion-label position="floating">Email</ion-label>
+                <ion-input [(ngModel)]="usersData.email"  type="email"></ion-input>
+              </ion-item>
+
+              <ion-item>
+                <ion-label position="floating">Password</ion-label>
+                <ion-input [(ngModel)]="usersData.password"  type="password"></ion-input>
+              </ion-item>
+              <ion-item>
+                <ion-label position="floating">Télephone</ion-label>
+                <ion-input [(ngModel)]="usersData.tele"  type="number"></ion-input>
+              </ion-item>
+
+              
+            </ion-list>
+             
+          </ion-content>
+          </ion-scroll>
+          <ion-toolbar class="add">
+            <div *ngIf="hideMe" class="butt">
+              <ion-fab-button (click)="hide()"
+                ><ion-icon name="add"></ion-icon>
+              </ion-fab-button>
+              <ion-label> Ajouter Utilisateur </ion-label>
+            </div>
+            <div *ngIf="!hideMe" class="butt1">
+              <ion-fab-button (click)="addUsersDetails()"
+                ><ion-icon src="../../assets/mdicons/save.svg"></ion-icon>
+              </ion-fab-button   >
+              <ion-label> Enregistrer</ion-label>
+
+              <ion-fab-button (click)="back()"
+                ><ion-icon src="../../assets/mdicons/retour.svg"></ion-icon>
+              </ion-fab-button>
+              <ion-label>Retour </ion-label>
+            </div>
+          </ion-toolbar>
+        </ion-content>
+      </ion-content>
+      <div class="prod" *ngIf="selectedSegement == 'prod'">
+        <h1>teext</h1>
+      </div>
+    </div>
+  </ion-content>
+  <ion-footer>
+    <ion-toolbar class="qr-scan">
+      <ion-fab-button> <ion-icon name="scan"></ion-icon></ion-fab-button>
+      <span class="qr">Scanner Qr Code</span>
+    </ion-toolbar>
+  </ion-footer>
+</ion-app>

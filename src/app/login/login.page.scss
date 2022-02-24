@@ -1,0 +1,164 @@
+
+@font-face {
+    font-family: 'acrom';
+    src: url('../../assets/fonts/Acrom-Medium.ttf');
+}
+
+ion-content{
+    --ion-background-color : linear-gradient(#E6E6E8, #F6F5F8 ,#E7E7E9, #F5F5F7 ,#F7F7F9,#E8E9EB )  ;
+}
+
+.logo{
+    text-align: center;
+    padding:30px;
+}
+
+.login-section{
+    box-shadow: 0 0 0 10px #F7F7F7  ;
+    height :80vh ;
+    width: 89%;
+    max-width: 500px;
+    background-color : #FFFFFF;
+    right :0;
+    left:0;
+    bottom: 0;
+    position: fixed;
+    margin: auto;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+
+.heading {
+    text-align: center;
+    h1{
+        letter-spacing: -4px;
+        color: #3D5A68;
+        padding: 10px;
+        font-size: 40px;
+        font-family: acrom;
+
+    }
+}
+
+.login-form{
+    padding : 10px 50px ;
+    
+    
+    
+    .form-input{
+       
+        position: relative;
+        margin-bottom: 20px;
+
+        ion-label{
+            font-family: acrom;
+        }
+        .passwordIcon{
+            font-size:2rem !important;
+            position: relative !important;
+            top: 22px !important;
+            margin: 0 auto !important;
+         }
+        ion-item:part(native){
+            padding-left: 0;
+        }
+        .eye-down{
+            --color : linear-gradient(#FFB701,#FF9302) !important ;
+        }
+        p{
+            font-family: acrom;
+            font-size: 13px;
+            color: #5586A6;
+            float: right;
+        }
+        .icon-login{
+            position: absolute;
+            top: 28px;
+            z-index: 2;
+            font-size: 34px;
+            left: -31px;
+        }
+        .passwordIcon{
+            font-size:2rem !important;
+           
+            top: 0px !important;
+            
+            margin: 0 auto !important;
+         }
+         ion-icon{
+            position: relative;
+            right: -20px;
+            top: 28px;
+         color:#D1D1D1 ;
+         }
+        ion-item{
+            --ion-background-color:#FFFF;
+        }
+        ion-label{
+            position: absolute;
+            margin-left: 5px;
+            font-weight:bolder;
+            font-size: 0.8rem;
+            top : 0px;
+
+        }
+
+        ion-input{
+            font-size: 0.9rem;
+            --padding-start: 5px;
+            --padding-top: 36px ;
+           
+        }
+    }
+
+}
+
+.action-button{
+    margin-top: 60px;
+    .round-button {
+        display:block;
+        width:110px;
+        border-radius: 50%;
+        box-shadow: 0 0 0 1px  #FF9301;
+        height:110px;
+        font-family: acrom;
+        line-height:80px;
+        border: 3px solid #FFFFFF;
+        border-radius: 50%;
+        background-image: linear-gradient(#FFB701,#FF9302) ;
+        color:#f5f5f5;
+        text-align:center;
+        text-decoration:none;
+        --background : linear-gradient(#FFB701,#FF9302) ; 
+       
+        font-size:22px;
+        
+    }
+    .round-button:hover {
+        background: #777555;
+    }
+
+    .fl{
+        position: relative;
+        top:-77px;
+        left:50px;
+    }
+    .login-button{
+        background-image: linear-gradient(#FFB701,#FF9302) ;
+       --background : linear-gradient(#FFB701,#FF9302) ; 
+           
+            border-radius:42px;
+            border:1px solid #FFB701;
+            display:inline-block;
+            cursor:pointer;
+            font-family:Georgia;
+            color: #FFFFFF;
+            font-size:22px;
+            text-decoration:none;
+            
+    }
+    .login-button:hover{
+        background: #5586a6;
+         text-decoration: none;
+    }
+}
+}

@@ -1,9 +1,66 @@
 <ion-header>
-  <ion-toolbar>
-    <ion-title>menu</ion-title>
+  <ion-toolbar >
+
+    <ion-row>
+
+      <ion-col ><ion-item lines="none">
+    <ion-icon  src="../../assets/mdicons/md-home.svg"> </ion-icon>  </ion-item>
+  </ion-col>
+
+  <ion-col>
+    
+    <ion-item class="bord" lines="none">
+      <ion-icon src="../../assets//mdicons/lines.svg" ></ion-icon>
+    <ion-icon class="pers" name="person"> </ion-icon>
+    <ion-title>Talberani</ion-title></ion-item>
+  </ion-col>
+
+
+  <ion-col>
+    <ion-item class="bord"  lines="none">
+      
+    <ion-icon  src="../../assets/mdicons/Settings.svg"> </ion-icon></ion-item>
+  </ion-col>
+
+  <ion-col>
+    <ion-item class="bord" lines="none">
+      
+    <ion-icon src="../../assets/mdicons/Logout.svg"> </ion-icon></ion-item>
+  </ion-col>
+
+
+
+
+
+  </ion-row>
+
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
+  <ion-item  lines="none">
+  <ion-segment class="menu ion-padding" value="favorite">
+    <ion-segment-button value="call">
+      
+      <ion-icon src="../../assets/mdicons/md-prod.svg"></ion-icon>
+    </ion-segment-button>
+    <ion-segment-button value="favorite">
+     
+      <ion-icon src="../../assets/mdicons/md-emp.svg" ></ion-icon>
+    </ion-segment-button>
+    <ion-segment-button value="map">
+      
+      <ion-icon src="../../assets/mdicons/md-us.svg"></ion-icon>
+    </ion-segment-button>
+    <ion-segment-button value="lio">
+      
+      <ion-icon src="../../assets/mdicons/md-inv.svg"></ion-icon>
+    </ion-segment-button>
+    <ion-segment-button value="lao">
+
+      <ion-icon src="../../assets/mdicons/md-stock.svg"></ion-icon>
+    </ion-segment-button>
+  </ion-segment>
+</ion-item>
 
 </ion-content>

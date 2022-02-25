@@ -1,0 +1,50 @@
+@font-face {
+    font-family: 'acrom';
+    src: url('../../assets/fonts/Acrom-Medium.ttf');
+  }
+  
+
+
+
+ion-header{
+    ion-toolbar{
+        --background : #3D5A68;
+    }
+
+  
+    ion-item{
+        
+       
+        --background : #3D5A68;
+        ion-title{
+            color: #FFFFFF;
+            font-family: acrom;
+        }
+    }
+    ion-icon{ 
+        font-size: 16px;
+        color:#FFFFFF ;
+    }
+   
+
+}
+
+.menu{
+    ion-segment-button{
+        min-width: 70px !important;
+        --indicator-color: transparent !important;
+        --indicator-color-checked: transparent !important;
+        --border-radius: 50%;
+        --color-checked :#3D5A68 ;
+        --background-checked : #3D5A68 ;
+       
+      }
+      ion-icon{
+          font-size: 30px;
+          
+            fill: #B2B9BC;
+         
+        
+      }
+ 
+}

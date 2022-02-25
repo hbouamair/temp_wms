@@ -1,6 +1,7 @@
 {
-  "name": "wms_mobile",
+  "name": "ionic-sqlite-crud",
   "integrations": {
+    "cordova": {},
     "capacitor": {}
   },
   "type": "angular"

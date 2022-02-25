@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { NavController } from '@ionic/angular';
 import { Router } from '@angular/router';
+import { CrudService } from '../crud.service';
+
 @Component({
   selector: 'app-login',
   templateUrl: './login.page.html',
@@ -8,12 +10,14 @@ import { Router } from '@angular/router';
 })
 export class LoginPage implements OnInit {
   password: string = "";
-  login: string = "";
+  username: string = "";
   showPassword= false ;
   passwordToggleIcone ='eye' ;
   classIcon = 'eye-up ';
 
-  constructor(public navCtrl: NavController , private route: Router) { }
+
+
+  constructor(public navCtrl: NavController , private route: Router,private crud: CrudService) { }
 
   ngOnInit() {
   }
@@ -30,14 +34,11 @@ export class LoginPage implements OnInit {
     }
 }
 
-loginCont(){
-  if( this.password=="admin" && this.login=="admin"){
-    this.route.navigate(['/home']);
 
-  }else {
-    alert("error");
-  }
-  
+login(){
+
+   this.crud.checkLogin(this.username ,this.password)
+
 
 }
 

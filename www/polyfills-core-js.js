@@ -1,10 +1,11 @@
-(self["webpackChunkapp"] = self["webpackChunkapp"] || []).push([["polyfills-core-js"],{
+(window["webpackJsonp"] = window["webpackJsonp"] || []).push([["polyfills-core-js"],{
 
-/***/ 1261:
+/***/ "t6o4":
 /*!****************************************************************!*\
   !*** ./node_modules/@ionic/core/dist/esm/polyfills/core-js.js ***!
   \****************************************************************/
-/***/ (() => {
+/*! no static exports found */
+/***/ (function(module, exports) {
 
 /**
  * core-js 3.6.5

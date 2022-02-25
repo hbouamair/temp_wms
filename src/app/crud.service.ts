@@ -198,22 +198,31 @@ export class CrudService {
 
 
 
-    checkLogin(username:string , password :string ) : Promise<any> {
-     return this.dbInstance.executeSql(`SELECT * FROM  ${this.db_users} WHERE  username = ? , password = ? `   , [username , password])
-      .then((res)=>{
-        if(res){
-          alert("login succesufully")
-        }else{
-          alert("sorry username invalid")
-        }
-      })
-      .catch(e=>{
-        alert(JSON.stringify(e))
-      });
+  
+    async login( username: string , password :string ){
+
+      return this.dbInstance.executeSql('SELECT * FROM users', []).then(data => {
         
-
-
+   
+        if (data.rows.length > 0) {
+          for (var i = 0; i < data.rows.length; i++) {
+            
+            if (data.rows.item(i).username != '' && data.rows.item(i).username == username && data.rows.item(i).username == username && data.rows.item(i).role == 0  ) {
+            
+                this.router.navigate(['/inventaire']);
+            }
+            else if(data.rows.item(i).username != '' && data.rows.item(i).username == username && data.rows.item(i).username == username && data.rows.item(i).role == 1  ){
+              this.router.navigate(['/inventaire']);
+  
+          }
+          else if(data.rows.item(i).username != '' && data.rows.item(i).username == username && data.rows.item(i).username == username && data.rows.item(i).role == 2 ){
+            this.router.navigate(['/inventaire']);
+  
+          }
+        }
       }
+    })
+  }
     }
 
 
